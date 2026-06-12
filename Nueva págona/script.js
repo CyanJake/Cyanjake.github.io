@@ -138,3 +138,79 @@ document.addEventListener('DOMContentLoaded', () => {
     // Arrancar el entorno gráfico
     init3D();
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('cantor-canvas');
+    const ctx = canvas.getContext('2d');
+    const slider = document.getElementById('iteration-slider');
+    const iterVal = document.getElementById('iteration-val');
+    
+    const statSegments = document.getElementById('stat-segments');
+    const statLength = document.getElementById('stat-length');
+    const statTotal = document.getElementById('stat-total');
+
+    // Configuración visual
+    const margin = 20;
+    const canvasWidth = canvas.width - (margin * 2);
+    const lineThickness = 15;
+    const verticalSpacing = 40; // Espacio entre cada nivel de iteración
+
+    // Función recursiva para dibujar los segmentos
+    function drawCantor(x, y, length, depth) {
+        // Dibuja el segmento actual
+        ctx.fillStyle = '#4f46e5'; // Azul de acento
+        ctx.fillRect(x, y, length, lineThickness);
+
+        // Condición de parada de la recursión
+        if (depth > 0) {
+            const newY = y + verticalSpacing;
+            const newLength = length / 3;
+            
+            // Llamada recursiva para el tercio izquierdo
+            drawCantor(x, newY, newLength, depth - 1);
+            
+            // Llamada recursiva para el tercio derecho
+            drawCantor(x + (newLength * 2), newY, newLength, depth - 1);
+        }
+    }
+
+    // Función para actualizar toda la vista
+    function updateVisualization() {
+        const iterations = parseInt(slider.value);
+        iterVal.textContent = iterations;
+
+        // Limpiar el lienzo completo
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Dibujar el conjunto desde la iteración 0 hasta la actual
+        // Empezamos en x = margen, y = margen
+        drawCantor(margin, margin, canvasWidth, iterations);
+
+        // Actualizar la matemática de la paradoja
+        const numSegments = Math.pow(2, iterations);
+        
+        // Usamos fracciones visuales para que sea evidente cómo la longitud se reduce
+        let fractionLength = `1 / ${Math.pow(3, iterations)}`;
+        let fractionTotal = `${Math.pow(2, iterations)} / ${Math.pow(3, iterations)}`;
+        
+        if (iterations === 0) {
+            fractionLength = "1";
+            fractionTotal = "1";
+        }
+
+        statSegments.textContent = numSegments;
+        statLength.textContent = fractionLength + " unidades";
+        
+        // Mostrar el decimal de la longitud total para evidenciar que tiende a 0
+        const decimalTotal = Math.pow(2/3, iterations).toFixed(4);
+        statTotal.textContent = `${fractionTotal} (Aprox. ${decimalTotal})`;
+    }
+
+    // Escuchar el evento del deslizador
+    slider.addEventListener('input', updateVisualization);
+
+    // Dibujar el estado inicial (Iteración 0) al cargar
+    updateVisualization();
+});
