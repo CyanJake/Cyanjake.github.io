@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-fib.css">
+    <title>Sucesión de Fibonacci</title>
+</head>
+<body>
+
+    <header class="header">
+        <h2 class="logo">Calculo II</h2>
+        <nav class="nav">
+            <a href="#introduccion">Inicio</a>
+            <a href="#historia">Historia</a>
+            <a href="#Sucesion">Sucesión</a>
+            <a href="#serie">Series</a>
+            <a href="#sucesion-fibonacci">Fibonacci</a>
+            <a href="#referencias">Referencias</a>
+        </nav>
+    </header>
+
+
+    <section id="introduccion">
+        <div class="portada">
+            <h1>Sucesión de Fibonacci</h1>
+            <h2>Matemáticas aplicadas a la naturaleza y el arte</h2>
+            
+            <div class="fila-destacada">
+                <p class="sabias-que">¿Sabías que las espirales de los girasoles, la forma de las conchas marinas y hasta la arquitectura de grandes monumentos esconden un patrón matemático? Ese patrón es la sucesión de Fibonacci, una serie de números que revela la sorprendente conexión entre las matemáticas y el mundo que nos rodea. Descubre cómo una simple regla de suma puede explicar la belleza de la naturaleza y el equilibrio en el arte.</p>
+                <img alt="Fibonacci en la naturaleza" width="300" src="Imagenes/Portada-Inic.jpg">
+            </div>
+        </div>
+    
+        <div class="portada2">
+            <p>La sucesión de Fibonacci es mucho más que números, es historia, teoría y aplicación. En esta página conocerás qué es una sucesión y una serie, cómo surgió este patrón, y por qué sigue siendo tan importante. Desde la naturaleza hasta el arte y la vida cotidiana, descubrirás cómo las matemáticas se conectan con el mundo real de una forma sorprendente.</p>
+            <a href="#historia" class="enlace-historia">Comencemos por la historia</a>
+        </div>
+    </section>
+
+    <section id="historia">
+        <h1>Historia de la sucesión de Fibonacci</h1>
+    
+        <div class="historia1">
+            <h2>Los Orígenes Ocultos: La Matemática India (Siglo II a.C. - Siglo XII d.C.)</h2>
+            <div class="fila-historia">
+                <div class="texto-historia">
+                    <p>Aunque en Occidente lleva el nombre de un matemático italiano, la sucesión ya se conocía en la India siglos antes de que Europa saliera de la Edad Media.</p>
+                    <ol>
+                        <li>Apareció originalmente en un problema sobre las métricas poéticas que se forman para un cuarto de estrofa en la poesía sánscrita, documentado en el texto Chandaḥśāstra escrito por el matemático indio Pingala. Los eruditos buscaban calcular las combinaciones de sílabas cortas (Laghu, con duración de una matra) y largas (Guru, con duración de dos matras).</li>
+                        <li>A partir de este tratado, el erudito Virahānka desarrolló el modelo matemático que calcula el número total de esas combinaciones ($M_n$) para un valor dado de matras, demostrando la secuencia 1, 2, 3, 5, 8, 13, 21...</li>
+                    </ol>
+                </div>
+                <img alt="Métrica de poesía sánscrita antigua" width="300" src="Imagenes/hist1.png">
+            </div>
+            <p class="cierre-centrado">En honor a la verdad histórica, las investigaciones confirman que estos números ya eran ampliamente conocidos y usados por los hindúes muchísimo antes de la publicación del manuscrito italiano.</p>
+        </div>
+    
+        <div class="historia2">
+            <h2>Leonardo de Pisa y la popularización en Occidente</h2>
+            <div class="fila-historia">
+                <div class="texto-historia">
+                    <p>Aquí es donde la sucesión entra formalmente en la historia europea y adopta su nombre actual, consolidándose como un hito de la Edad Media.</p>
+                    <h3>¿Quién fue Leonardo de Pisa?</h3>
+                    <p>Leonardo de Pisa, conocido como Fibonacci, nació en Pisa alrededor del año 1175 en el seno de una familia de mercaderes. Su padre, Guglielmo Bonacci, fue nombrado cónsul de comerciantes en la ciudad argelina de Bugía, lugar a donde llevó a Leonardo para que maestros árabes lo instruyeran en el arte del cálculo y el sistema indoarábigo. Tras realizar viajes de negocios por Egipto, Siria, Grecia, Sicilia y Provenza, acumuló grandes conocimientos aritméticos y discusiones con eruditos locales.</p>
+                    <h3>La sucesión en el "Liber Abaci"</h3>
+                    <p>En el año 1200 regresó a Pisa y escribió el Liber Abaci (El libro del ábaco), el cual cuenta con dos versiones publicadas en 1202 y 1228. El objetivo principal del libro no era la sucesión, sino exaltar las ventajas del sistema indoarábigo frente a los números romanos tradicionales, que hacían los cálculos largos y tediosos. Para convencer a los comerciantes de la época de adoptar este sistema, incluyó alrededor de 200 problemas prácticos de comercio, conversión de monedas e intereses.</p>
+                </div>
+                <img alt="Retrato histórico de Leonardo de Pisa Fibonacci" width="300" src="Imagenes/hist2.png">
+            </div>
+        </div>
+    
+        <div class="historia3">
+            <h2>El problema de los conejos</h2>
+            <div class="fila-historia">
+                <div class="texto-historia">
+                    <p>La sucesión aparece de forma aislada en el capítulo 12 del Liber Abaci como una situación teórica y biológicamente idealizada. El planteamiento textual es el siguiente: Un hombre tenía un par de conejos en un lugar cerrado y deseaba saber cuántos pares se crean a partir de este par en un año, considerando que en un mes cada par da lugar a otro par, y al segundo mes, los nacidos comienzan también a reproducirse.</p>
+                    <p>Al calcular mes a mes de forma aditiva (sumando a los pares existentes la cantidad de parejas adultas del mes anterior), Fibonacci registró la evolución en el margen de su manuscrito y concluyó que al cabo de un año se obtiene un total de 377 parejas.</p>
+                </div>
+                <img alt="Diagrama matemático del problema de los conejos" width="300" src="Imagenes/hist3.png">
+            </div>
+        </div>
+
+        <div class="enlace-siguiente">
+            <p>Ahora que sabemos sobre la historia de la sucesión de Fibonacci, <a href="#sucesion">veamos qué es una sucesión en general.</a></p>
+        </div>
+    </section>
+
+    <section id="sucesion">
+        <h1>¿Qué es una sucesión?</h1>
+        
+        <div class="fila-sucesion">
+            
+            <div class="sucesion1">
+                <p>Una sucesión es una lista ordenada de números que siguen una regla específica. Cada número de la lista se llama término, y su posición dentro de la sucesión está determinada por esa regla. Por ejemplo, la sucesión de los números pares (2, 4, 6, 8, …) sigue la regla de sumar 2 en cada paso. Las sucesiones son importantes porque permiten describir patrones y relaciones matemáticas que aparecen tanto en la teoría como en la vida cotidiana.</p>
+                <p>Ahora partamos de un ejemplo concreto:</p>
+            </div>
+
+            <div class="sucesion2">
+                <h2>Lista de invitados VIP</h2>
+                <p>Imagina la lista de invitados para entrar a un club VIP. No puedes poner los nombres al azar; hay un orden: el invitado 1, el invitado 2, el invitado 3.</p>
+                <ul>
+                    <li>Por ejemplo, si la regla es "sumar 2", tu lista sería: 2, 4, 6, 8, 10... </li>
+                    <li>El orden importa muchísimo. El número 8 está en la posición número 4. Si lo cambias de lugar, rompes la regla.</li>
+                </ul>
+
+                <div class="simulador-vip">
+                    <h3>Generador de la Lista VIP</h3>
+                    <p>Haz clic en el botón para ver cómo se construye la sucesión de forma ordenada:</p>
+                    <button id="btn-agregar">¡Invitar a la siguiente persona!</button>
+                    <button id="btn-reiniciar" style="background-color: #6c757d; margin-left: 10px;">Reiniciar</button>
+                    
+                    <ul id="lista-interactiva" style="margin-top: 15px; list-style-type: none; padding-left: 0;">
+                        </ul>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="sucesion3">
+            <p>Ahora que ya sabemos más sobre la sucesión en sí, veamos qué es una serie</p>
+            <a href="#serie" class="enlace-serie">Continuar a la sección de series</a>
+        </div>
+    </section>
+
+    <section id="serie">
+        <h1>¿Qué es una serie?</h1>
+        
+        <div class="fila-serie">
+            
+            <div class="serie1">
+                <p>Una serie es el resultado de sumar los términos de una sucesión. Mientras que la sucesión muestra los números uno tras otro, la serie nos enseña qué pasa cuando los acumulamos. La importancia de las series está en que permiten analizar el comportamiento de patrones numéricos y entender fenómenos que van desde cálculos matemáticos hasta aplicaciones en física, economía y tecnología.</p>
+                <p>Ahora partamos de un ejemplo concreto:</p>
+            </div>
+
+            <div class="serie2">
+                <h2>El Reto de la Alcancía</h2>
+                <p>Imagina que decides armar un reto de ahorro. El primer día metes $5 en tu alcancía, el segundo día metes $10, el tercero $15, y así sucesivamente.</p>
+                <ul>
+                    <li>La <strong>sucesión</strong> es el depósito diario individual que vas haciendo: 5, 10, 15, 20...</li>
+                    <li>La <strong>serie</strong> es el total de dinero acumulado que tienes dentro de la alcancía a lo largo del tiempo: $5, luego $15 (5+10), luego $30 (5+10+15), etc.</li>
+                </ul>
+
+                <div class="simulador-alcancia">
+                    <h3>Simulador de Ahorro Acumulado</h3>
+                    <p>Haz clic para simular el paso de los días y ver cómo se acumula la serie:</p>
+                    <button id="btn-ahorrar">Avanzar al siguiente día</button>
+                    <button id="btn-vaciar" style="background-color: #6c757d; margin-left: 10px;">Vaciar Alcancía</button>
+                    
+                    <div class="marcador-total" style="margin-top: 15px; font-size: 1.2rem;">
+                        <strong>Total en la alcancía (Serie):</strong> <span id="total-serie" style="color: #28a745; font-weight: bold;">$0</span>
+                    </div>
+                    
+                    <ul id="historial-ahorro" style="margin-top: 15px; list-style-type: none; padding-left: 0; max-height: 150px; overflow-y: auto;">
+                        </ul>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="serie3">
+            <p>Ahora que ya entendemos qué es una serie, veamos ya lo que es la sucesión de Fibonacci</p>
+            <a href="#sucesion-fibonacci" class="enlace-fibonacci">Continuar a la sección de Fibonacci</a>
+        </div>
+    </section>
+
+    <section id="sucesion-fibonacci">
+        <h1>¿Qué es la sucesión de Fibonacci?</h1>
+        
+        <div class="fila-fibonacci">
+            <div class="fibonacci1">
+                <p>La sucesión de Fibonacci es una lista infinita de números donde cada término se obtiene sumando los dos anteriores. Se define así:</p>
+                <p class="formula-fibonacci">
+                    F(0) = 0<br>
+                    F(1) = 1<br>
+                    F(n) = F(n - 1) + F(n - 2) para n > 1
+                </p>
+                <p>Esta sucesión no solo es un objeto matemático interesante, sino que aparece en fenómenos naturales como la disposición de las hojas en las plantas, las espirales de los caracoles y la estructura de los girasoles. También se aplica en arte, arquitectura y hasta en algoritmos de computación.</p>
+
+                <div class="interactivo-caja" style="margin-top: 20px; padding: 15px; background-color: #fff; border-left: 4px solid #007bff; border-radius: 4px;">
+                    <h3>Generador de la Sucesión</h3>
+                    <p>Haz clic para ir descubriendo los números de la sucesión uno por uno:</p>
+                    <button id="btn-fibo-siguiente" style="padding: 8px 15px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Descubrir siguiente número</button>
+                    <button id="btn-fibo-reiniciar" style="padding: 8px 15px; background-color: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-left: 5px;">Reiniciar</button>
+                    <p style="margin-top: 15px; font-size: 1.2rem;"><strong>Secuencia:</strong> <span id="texto-secuencia" style="color: #007bff; font-weight: bold;">0, 1</span></p>
+                </div>
+            </div>
+
+            <div class="fibonacci2">
+                <h2>La madre de la recursividad</h2>
+                <p>En el mundo de la programación y las matemáticas discretas, no siempre es posible resolver un problema de un solo golpe. A veces, la solución requiere que una fórmula se alimente directamente de sus propios resultados anteriores para poder avanzar. A este concepto fundamental se le conoce como recursividad.</p>
+                <p>La sucesión de Fibonacci es el ejemplo perfecto de una función que se muerde la cola: matemáticamente, no puedes calcular la posición número 100 de la secuencia si no conoces previamente los valores de las posiciones 99 y 98. Entender esta lógica es el primer paso indispensable para aprender a programar algoritmos de búsqueda eficientes y diseñar estructuras de datos complejas en tu carrera.</p>
+
+                <div class="interactivo-caja" style="margin-top: 20px; padding: 15px; background-color: #fff; border-left: 4px solid #dc3545; border-radius: 4px;">
+                    <h3>Simulador de Dependencia (Fórmula)</h3>
+                    <p>Mira de qué números depende el término que elijas:</p>
+                    <select id="select-termino" style="padding: 6px; font-size: 1rem; border-radius: 4px;">
+                        <option value="2">F(2)</option>
+                        <option value="3">F(3)</option>
+                        <option value="4">F(4)</option>
+                        <option value="5">F(5)</option>
+                    </select>
+                    <button id="btn-analizar" style="padding: 7px 12px; background-color: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-left: 5px;">Ver Origen</button>
+                    <p id="resultado-recursivo" style="margin-top: 15px; font-family: monospace; background-color: #f8f9fa; padding: 10px; border-radius: 4px; min-height: 25px; font-size: 0.95rem;">Selecciona un término para ver su desglose.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="fila-fibonacci-inferior">
+            <div class="fibonacci3">
+                <h2>El atajo a la proporción áurea</h2>
+                <p>Aquí es donde el comportamiento de la sucesión se pone verdaderamente fascinante. Si tomas cualquier número de la sucesión de Fibonacci y lo divides exactamente entre el número inmediatamente anterior (como realizar las operaciones 13 ÷ 8, luego 21 ÷ 13, o 34 ÷ 21), notarás que el resultado no es aleatorio.</p>
+                <p>De hecho, a medida que avanzas en la lista, el valor numérico se va acercando cada vez más a un número decimal muy específico: 1.618... Ese valor límite es φ (Fi), la famosa Proporción Áurea. Desde la perspectiva del análisis numérico, este fenómeno demuestra una propiedad matemática sorprendente: cómo una simple lista de números enteros (completamente libres de decimales) esconde en su propio comportamiento interior la capacidad de aproximarse al infinito hacia una constante irracional.</p>
+
+                <div class="interactivo-caja" style="margin-top: 20px; padding: 15px; background-color: #fff; border-left: 4px solid #28a745; border-radius: 4px;">
+                    <h3>Aproximación a la Proporción Áurea (φ)</h3>
+                    <p>Haz clic para hacer la división del siguiente par de números en la lista y ver cómo se acerca a 1.618:</p>
+                    <button id="btn-dividir-aurea" style="padding: 8px 15px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Calcular siguiente división</button>
+                    <button id="btn-aurea-reiniciar" style="padding: 8px 15px; background-color: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-left: 5px;">Limpiar</button>
+                    
+                    <ul id="lista-divisiones" style="margin-top: 15px; padding-left: 20px; font-size: 1rem; line-height: 1.5;">
+                        </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="fibonacci-cierre">
+            <p>Has completado el recorrido por el mundo de Fibonacci.</p>
+            <a href="#referencias" class="enlace-referencias">Ver las referencias bibliográficas</a>
+        </div>
+    </section>
+
+    <section id="referencias">
+        <h1>Referencias</h1>
+        <div class="referencias1">
+            <ul>
+                <li>Marín Mosquera, J. A., Ramírez Ramírez, J., & Marín Ríos, A. (2025, mayo 14). La sucesión de Fibonacci: una mirada histórica e interdisciplinar para el aula. Congreso de Educación Matemática de América Central y El Caribe. <a href="https://ponencias.ciaem-redumate.org/cemacyc/article/view/104" target="_blank">Página web</a></li>
+                <li>Stewart, J. (2012). Cálculo de una variable: Trascendentes tempranas (7ma ed.). Cengage Learning. (Capítulo 11: Sucesiones y series infinitas). </li>
+                <li>Rosen, K. H. (2012). Matemática discreta y sus aplicaciones (7ma ed.). McGraw-Hill. (Capítulo 5: Inducción y recursividad).</li>
+
+            </ul>
+        </div>
+    </section>
+    <script src="script-fib.js"></script>
+</body>
+</html>
