@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptos de Geometría</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> <!--Script -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>Volumen de sólidos de revolución</h1>
+        </div>
+    </header>
+
+    <main class="container content-area">
+        <article class="concept-card">
+            <p>
+                A pesar de que suena cómo un tema extremadamente complicado la realidad es otra pero 
+                antes necesitamos comprender algunos conceptos básicos, recomendamos ampliamente que se revise la sección de antecedentes 
+                antes de cualquier tema.  </p>
+                <a href="antecedentes.html" target="_blank"><h1>Antecedentes</h1></a>
+
+            <h2>¿Qué es un sólido de revolución?</h2>
+            <p>Para esto será necesario un pequeño ejercicio desde dónde se encuentra, tome una moneda que aunque tiene volumen si la recuesta y la ve desde arriba parece un círculo más
+                uno "plano", ahora pongala de nuevo levantada y comience a girarla muy rápido; Notará que no está viendo sólo un círculo girar si no que genera una ilusión óptica de algo
+                en 3D, una esfera. 
+                Pues los sólidos de revolución no son más que eso una figura tridimensional (en 3D, con volumen) que nace cuando agarramos una figura plana (en 2D) y la hacemos dar vueltas 
+                completas sobre un eje, como si estuviera pegada a un palo de brocheta y lo hiciéramos girar entre nuestras manos.
+                </p>
+
+                <h2>¿Por qué nos interesa tener esta información?</h2>
+                <p>En el mundo de la ingeniería y la fabricación, 
+                    necesitamos saber exactamente cuánto material (madera, plástico, metal) o cuánta agua 
+                    cabe dentro de estas piezas.
+                <br>
+                Ya que no podemos medir estas formas extrañas con una simple regla, usamos un truco matemático: rebanar. Imagina que tomas un florero y lo cortas en rebanadas súper delgaditas, tan delgadas como una hoja de papel. 
+                Si calculamos el tamaño de cada una de esas rebanadas circulares y luego las sumamos todas juntas, obtenemos el volumen total. 
+                Esa "suma infinita de rebanadas" es lo que en matemáticas le llamamos Integral.
+                </p>
+            Pero ya que una imagen dice más que mil palabras aquí se encuentra el simulador:
+            
+            <div class="simulator-section">
+                <div class="controls-panel">
+                    <div class="control-group">
+                        <label for="function-select">Función perfil f(y):</label>
+                        <select id="function-select">
+                            <option value="lineal">Línea Recta (f(y) = y) -> Cono</option>
+                            <option value="parabola">Parábola (f(y) = √y) -> Paraboloide</option>
+                            <option value="sinusoidal">Ondulada (f(y) = sin(y) + 1.5)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="angle-slider">Ángulo de rotación: <span id="angle-val">360</span>°</label>
+                        <input type="range" id="angle-slider" min="0" max="360" value="360">
+                    </div>
+                </div>
+
+                <div id="canvas-3d-container"></div>
+            </div>
+       
+       
+       
+       
+            </article>
+    </main>
+<script src="script.js"></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Diccionario de Matemáticas.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
