@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #ffffff; /* Fondo blanco puro */
-    color: #333333; /* Texto gris oscuro para mejor contraste y lectura */
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333333; /* Texto gris*/
     line-height: 1.6;
 }
 
@@ -49,12 +49,12 @@ body {
     margin-bottom: 20px;
 }
 
-/* LA REGLA DE ORO PARA LAS IMÁGENES */
+/* CONGIFURACIÓN PARA IMÁGENES */
 .imagen img {
     max-width: 100%; /* Evita que la imagen sea más ancha que su contenedor */
     height: auto; /* Mantiene la proporción original */
     display: block;
-    border-radius: 8px; /* Bordes ligeramente redondeados (opcional) */
+    border-radius: 8px; /* Bordes ligeramente redondeados*/
     margin: 0 auto 10px auto;
 }
 
