@@ -28,7 +28,7 @@ body {
 
 .header h1 {
     font-size: 1.8rem;
-    color: #000000;
+    color: #FF0000;
 }
 
 /* Tipografía del artículo */
@@ -160,7 +160,7 @@ body {
 }
 
 .subtitle {
-    color: #000000;
+    color: FF0000;
     font-size: 1.1rem;
     margin-top: 10px;
 }
