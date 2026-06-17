@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo
+    </title>
+    <link rel="stylesheet" href="stylesint.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="scriptint.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .geogebra-wrapper {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            /* Mantiene la proporción para que no se deforme */
+            aspect-ratio: 4/3; 
+            overflow: hidden;
+        }
+        
+        .geogebra-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    
+</head>
+<body>
+
+<nav>
+    <a href="index.html" style="text-decoration:none"><h2>∫ Inicio</h2></a>
+    <ul>
+        <li><a href="#integral">Integral</a></li>
+        <li><a href="#riemann">Riemann</a></li>
+        <li><a href="#Teorema">Teorema</a></li>
+        <li><a href="#metodos">Métodos</a></li>
+        <li><a href="#Cuestionario">cuestionario</a></li>
+    </ul>
+</nav>
+
+<header class="hero">
+    <h1> Integrales </h1>
+    <p>
+        Las integrales no solo son calcular areas: te enseñan mas que eso sino como se comportan.
+    </p>
+</header>
+
+<main>
+    <section id="integral" class="card">
+        <h2>¿Qué es una Integral?</h2>
+
+        <div class="destacado azul">
+            <p><b>El Concepto de Integral:</b></p>
+            <p>
+                En cálculo, la integración es el proceso inverso a la diferenciación. Mientras que la derivada calcula la razón de cambio instantánea de una función, la integral acumula esos cambios continuos a lo largo de un intervalo, permitiendo recuperar la función original o determinar magnitudes acumuladas como áreas, volúmenes y trabajo útil.
+            </p>
+        </div>
+
+      <div class="destacado rojo">
+    <p><b>La Integral Indefinida:</b></p>
+    <p>
+        La integral indefinida de una función <strong>f(x)</strong> es el conjunto de todas las antiderivadas de <strong>f(x)</strong>, es decir, otra función <strong>F(x)</strong> tal que <strong>F'(x) = f(x)</strong>, más una constante de integración <strong>C</strong> (ya que la derivada de una constante es 0).
+    </p>
+</div>
+ 
+    <div class="formula">
+    \[
+    \int f(x)\,dx = F(x) + C
+    \]
+</div>
+      <div class="destacado amarillo">
+        
+     <p><b>La Integral Definida:</b></p>
+    <p>
+        La integral definida de una función en un intervalo [a, b] es un número real
+        que representa el área neta comprendida entre la gráfica de la función y el
+        eje x, desde x = a hasta x = b.
+    </p>
+      </div>
+
+       <div class="formula">
+    \[
+    \int_{a}^{b} f(x)\,dx
+    \]
+       </div>
+       
+   
+
+    <section id="riemann" class="card">
+        <h2>Sumas de Riemann</h2>
+
+       <div class="destacado morado">
+    <p><b>¿Qué son las sumas de Riemann?</b></p>
+
+    <p>
+        Las sumas de Riemann son una forma de aproximar el área que existe debajo de una curva.
+        Imagina que quieres saber cuánto espacio ocupa una figura con bordes curvos, pero no
+        tienes una fórmula para calcularlo. Lo que hacemos es dividir la figura
+        en muchos rectángulos pequeños y sumar el área de cada uno.
+    </p>
+
+    <p>
+        Mientras más rectángulos utilicemos, más precisa será la aproximación. Si los
+        rectángulos se hacen extremadamente pequeños.
+</div>
+
+
+          <section id="conceptos" class="card-section">
+        <h2 class="section-title">Conceptos importantes</h2>
+        <p>Para entender mejor las sumas de Riemann, es fundamental conocer algunos conceptos para darnos cuenta de donde viene cada cosa y para que sirve. </p>
+    </p>
+        <p class="section-desc">Toca en cualquier tarjeta para voltearla y descubrir su definición formal.</p>
+        
+        <div class="grid-tarjetas aparecer">
+            <div class="tarjeta" onclick="this.classList.toggle('volteada')">
+                <div class="tarjeta-interior">
+                    <div class="cara">
+                        <div>
+                            <div class="tarjeta-tag">Concepto</div>
+                            <div class="tarjeta-nombre" style="color: var(--verde)">¿Qué es una partición?</div>
+                        </div>
+                        <div class="tarjeta-linea" style="background: var(--verde)"></div>
+                        <div class="tarjeta-pista"> Toca para ver</div>
+                    </div>
+                    <div class="reverso">
+                        <p>Una partición P de [a, b] divide el intervalo en n subintervalos iguales. Cada uno tiene ancho Δx = (b−a)/n.</p>
+                        <span class="formula-tag">Δx = (b − a) / n</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta" onclick="this.classList.toggle('volteada')">
+                <div class="tarjeta-interior">
+                    <div class="cara">
+                        <div>
+                            <div class="tarjeta-tag">Método</div>
+                            <div class="tarjeta-nombre" style="color: var(--rojo)">Suma Izquierda</div>
+                        </div>
+                        <div class="tarjeta-linea" style="background: var(--rojo)"></div>
+                        <div class="tarjeta-pista"> Toca para ver</div>
+                    </div>
+                    <div class="reverso">
+                        <p>Se evalúa f en el extremo izquierdo xᵢ₋₁ de cada subintervalo. Puede subestimar o sobreestimar según si f es creciente o no.</p>
+                        <span class="formula-tag">Lₙ = Σ f(xᵢ₋₁) · Δx</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta" onclick="this.classList.toggle('volteada')">
+                <div class="tarjeta-interior">
+                    <div class="cara">
+                        <div>
+                            <div class="tarjeta-tag">Método</div>
+                            <div class="tarjeta-nombre" style="color: var(--oro)">Punto Medio</div>
+                        </div>
+                        <div class="tarjeta-linea" style="background: var(--oro)"></div>
+                        <div class="tarjeta-pista"> Toca para ver</div>
+                    </div>
+                    <div class="reverso">
+                        <p>Evalúa f en el punto central de cada subintervalo. Es más preciso que izquierda y derecha — su error es O(Δx²).</p>
+                        <span class="formula-tag">Mₙ = Σ f((xᵢ₋₁+xᵢ)/2) · Δx</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta" onclick="this.classList.toggle('volteada')">
+                <div class="tarjeta-interior">
+                    <div class="cara">
+                        <div>
+                            <div class="tarjeta-tag">Darboux</div>
+                            <div class="tarjeta-nombre" style="color: var(--verde)">Inferior y Superior</div>
+                        </div>
+                        <div class="tarjeta-linea" style="background: var(--verde)"></div>
+                        <div class="tarjeta-pista">Toca para ver</div>
+                    </div>
+                    <div class="reverso">
+                        <p>L(f,P) usa el mínimo de f en cada subintervalo y U(f,P) el máximo. La función es integrable si ambas sumas convergen al mismo valor.</p>
+                        <span class="formula-tag">L(f,P) ≤ ∫f dx ≤ U(f,P)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta" onclick="this.classList.toggle('volteada')">
+                <div class="tarjeta-interior">
+                    <div class="cara">
+                        <div>
+                            <div class="tarjeta-tag">Definición</div>
+                            <div class="tarjeta-nombre" style="color: var(--rojo)">La Integral Definida</div>
+                        </div>
+                        <div class="tarjeta-linea" style="background: var(--rojo)"></div>
+                        <div class="tarjeta-pista"> Toca para ver</div>
+                    </div>
+                    <div class="reverso">
+                        <p>Es el límite de las sumas de Riemann cuando n → ∞. Representa el área neta entre f(x) y el eje x en el intervalo [a, b].</p>
+                        <span class="formula-tag">∫[a,b] f dx = lim[n→∞] Σ f(xᵢ*)·Δx</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta" onclick="this.classList.toggle('volteada')">
+                <div class="tarjeta-interior">
+                    <div class="cara">
+                        <div>
+                            <div class="tarjeta-tag">TFC</div>
+                            <div class="tarjeta-nombre" style="color: var(--oro)">Teorema Fundamental</div>
+                        </div>
+                        <div class="tarjeta-linea" style="background: var(--oro)"></div>
+                        <div class="tarjeta-pista">Toca para ver</div>
+                    </div>
+                    <div class="reverso">
+                        <p>Si F es antiderivada de f en [a,b], la integral definida se calcula evaluando F en los extremos. Conecta derivada e integral.</p>
+                        <span class="formula-tag">∫[a,b] f(x)dx = F(b) − F(a)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+<H1>Suma de riemman interactiva</H1>
+<!-- simulador -->
+<div class="geogebra-wrapper">
+        <iframe scrolling="no" title="Sumas de Riemann" 
+               src="https://www.geogebra.org/material/iframe/id/kzdkrhxb/width/1366/height/549/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" 
+                width="300px" height="300px" style="border: 0px;"
+                >
+        </iframe>
+    </div>
+
+     <div class="destacado azul">
+<section class="teorema-seccion">
+    <h2> Teorema Fundamental del Cálculo </h2>
+    
+    <p>
+        Este teorema establece formalmente que la derivación y la integración son operaciones inversas. 
+        Si definimos una nueva función que acumula el área bajo la curva de f desde un punto fijo 
+        $a$ hasta un punto variable x, la tasa de cambio de esa nueva función es la función original.
+    </p>
+</div>
+
+<h3>Definición formal:</h3>
+
+<p>
+    Sea \( f:[a,b] \to \mathbb{R} \) una función continua en \([a,b]\).
+    Si definimos la función de acumulación \( G(x) \) en el intervalo
+    \([a,b]\) como:
+</p>
+
+<div class="formula-block">
+    $$
+    G(x)=\int_{a}^{x} f(t)\,dt
+    $$
+</div>
+
+<p>
+    Entonces \( G(x) \) es continua en \([a,b]\), diferenciable en el
+    intervalo abierto \((a,b)\), y su derivada es:
+</p>
+
+<div class="formula-block">
+    $$
+    G'(x)=\frac{d}{dx}\left[\int_{a}^{x} f(t)\,dt\right]=f(x)
+    $$
+</div>
+
+<div class="destacado rojo">
+    <section class="teorema-seccion">
+        <h2>Teorema Fundamental del Cálculo</h2>
+
+        <p>1. Determinar la antiderivada general F(x).</p>
+        <p>2. Evaluar la función en el límite superior F(b).</p>
+        <p>3. Evaluar la función en el límite inferior F(a).</p>
+        <p>4. Calcular la diferencia: F(b) - F(a).</p>
+
+    </section>
+</div>
+
+
+ 
+   </section>
+   
+    <section class="card">
+        <h2>Tabla de Integrales Básicas</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Función</th>
+                        <th>Integral</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>xⁿ</td>
+                        <td>xⁿ⁺¹ / (n+1) + C (n &ne; -1)</td>
+                    </tr>
+                    <tr>
+                        <td>1/x</td>
+                        <td>log|x| + C</td>
+                    </tr>
+                    <tr>
+                        <td>eˣ</td>
+                        <td>eˣ + C</td>
+                    </tr>
+                    <tr>
+                        <td>sen(x)</td>
+                        <td>-cos(x) + C</td>
+                    </tr>
+                    <tr>
+                        <td>cos(x)</td>
+                        <td>sin(x) + C</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+ 
+    <div class="destacado rojo">
+        
+     <p><b>Métodos de Integración:</b></p>
+        <h3>Sustitución (Cambio de Variable)</h3>
+        <p>
+            Es la técnica matemática equivalente a la Regla de la Cadena de la derivación. Se utiliza para simplificar el integrando transformando la variable original en una nueva variable <i>u</i>, de modo que la derivada de la estructura interna también forme parte del término diferencial.
+        </p>
+
+       <div class="formula">
+
+     \[
+     \int f(g(x))\,g'(x)\,dx = \int f(u)\,du
+     \]
+
+      </div>
+
+        <h3>Integración por Partes</h3>
+        <p>
+            Este método se deriva directamente de la regla del producto para la derivación de funciones continuas. Es la herramienta analítica idónea para resolver integrales donde el integrando está compuesto por el producto de funciones algebraicas, trascendentes o trigonométricas.
+        </p>
+
+        <div class="formula">
+         
+     \[
+     \int u(x)\,v'(x)\,dx
+     =
+     u(x)\,v(x)
+     -
+     \int v(x)\,u'(x)\,dx
+     \]
+
+        </div>
+
+
+
+    </section>
+
+    <section class="card">
+        <h2>Ejercicio Interactivo</h2>
+        <p>Calcula la siguiente integral indefinida:</p>
+        <div class="formula">
+            
+           \[ \int x^2\,dx \]
+        </div>
+        <div class="input-container">
+            <input type="text" id="respuesta" placeholder="Escribe tu respuesta (ej: x^3/3)">
+            <button id="verificar">Verificar</button>
+        </div>
+        <p id="resultado"></p>
+
+
+
+
+
+            </section>
+
+    <section class="card">
+        <h2>Ejercicio Interactivo</h2>
+        <p>Calcula la siguiente integral indefinida:</p>
+        <div class="formula">
+            
+           \[ \int x^3\,dx \]
+        </div>
+        <div class="input-container">
+            <input type="text" id="respuesta" placeholder="Escribe tu respuesta (ej: x^4/4)">
+            <button id="verificar">Verificar</button>
+        </div>
+        <p id="resultado"></p>
+    </section>
+
+    <section class="card">
+        <h2>Ejercicio Interactivo</h2>
+        <p>Calcula la siguiente integral indefinida:</p>
+        <div class="formula">
+            
+           \[ \int x^6\,dx \]
+        </div>
+        <div class="input-container">
+            <input type="text" id="respuesta" placeholder="Escribe tu respuesta (ej: x^7/7)">
+            <button id="verificar">Verificar</button>
+        </div>
+        <p id="resultado"></p>
+    </section>
+
+
+
+
+          
+
+
+    <section id="Cuestionario" class="card">
+        <h2>Cuestionario de Integrales</h2>
+        <div id="preguntas"></div>
+        <div class="score-container">
+            <p>Puntuación actual: <span id="score">0</span> / 4</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+     <p>&copy;Creative commons - Proyecto cálculo II.</p>
+</footer>
+
+</body>
+
+</html>

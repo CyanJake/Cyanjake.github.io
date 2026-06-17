@@ -1,0 +1,419 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:  border-box;
+}
+
+:root {
+  --accent: #2d6a4f;
+  --accent-soft: #d8f3dc;
+  --bg: #e6eced;
+  --card: #ffffff;
+  --text: #000000;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+   --morado:#9b59b6;
+    --azul:#3498db;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Navegación */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #f8eeee;
+  box-shadow: var(--shadow);
+}
+
+nav h2{
+  color: var(--accent);
+}
+
+nav u1{
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+ text-decoration: none;
+ color: var(--text);
+ font-weight: 500;
+ transition: 0.3s;
+}
+
+nav a:hover{
+  color: var(--accent);
+}
+
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #c8efce;
+}
+
+
+.hero h1{
+ font-size: 3rem;
+ color: var(--accent);
+ margin-bottom: 20px;
+
+
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+}
+
+
+
+
+/* Tarjetas */
+main{
+  padding: 10px;
+}
+.card {
+  background: #f1f1f1;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  margin-top: 50px;
+  background: #c5cbc8;
+  box-shadow: var(--shadow);
+}
+
+/* Bloques Destacados Semánticos */
+.destacado {
+  max-width: 1000px;
+  line-height: 1.6;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.destacado.azul {
+  border-left: 4px solid #007acc;
+  background-color: #f0f7fc;
+}
+
+.destacado.rojo {
+  border-left: 4px solid #e74c3c;
+  background-color: #fdf2f2;
+}
+
+.destacado.amarrilo {
+  border-left: 4px solid #e74c3c;
+  background-color: #fdf2f2;
+}
+
+.destacado.amarillo {
+    border-left: 4px solid #f1c40f;
+    background-color: #fff9db;
+}
+
+.destacado.morado{
+    border-left: 4px solid #9b59b6;
+    background-color: #f4e1f9;
+}
+
+/* tarjetas flip */
+  .grid-tarjetas { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .tarjeta { height: 180px; perspective: 900px; cursor: pointer; }
+  .tarjeta-interior { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.5s ease; }
+  .tarjeta.volteada .tarjeta-interior { transform: rotateY(180deg); }
+  .cara, .reverso {
+    position: absolute; inset: 0; backface-visibility: hidden;
+    border-radius: 10px; padding: 1.2rem; border: 1px solid var(--borde);
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .cara { background: var(--card);}
+  .cara {background: #ffffff; transform: rotateY(0deg);}
+  .reverso { background: #ffffff; transform: rotateY(180deg); justify-content: center; }
+  .tarjeta-tag { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gris); font-family: var(--mono); }
+  .tarjeta-nombre { font-size: 1.1rem; font-weight: 700; margin: 0.3rem 0; }
+  .tarjeta-pista { font-size: 0.7rem; color: var(--gris); }
+  .tarjeta-linea { height: 2px; border-radius: 2px; width: 32px; }
+  .reverso p { font-size: 0.8rem; line-height: 1.7; }
+  .formula-tag {
+    font-family: var(--mono); font-size: 0.78rem;
+    background: rgba(246, 243, 243, 0.4); padding: 0.4rem 0.65rem;
+    border-radius: 5px; color: var(--oro); margin-top: 0.6rem; display: block;
+    line-height: 1.5;
+  }
+
+  /* controles */
+  .fila-controles { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: flex-end; margin-bottom: 1.2rem; }
+  .grupo { display: flex; flex-direction: column; gap: 0.3rem; min-width: 150px; }
+  .grupo label { font-size: 0.73rem; color: var(--gris); font-family: var(--mono); }
+  .grupo label b { color: var(--oro); }
+  input[type=range] { -webkit-appearance: none; appearance: none; height: 4px; border-radius: 4px; background: var(--borde); cursor: pointer; width: 100%; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; background: var(--blanco); border: 2px solid var(--fondo); }
+  select { background: #ffffff; color: var(--texto); border: 1px solid var(--borde); border-radius: 6px; padding: 0.4rem 0.65rem; font-size: 0.8rem; cursor: pointer; }
+
+  /* botones toggle método */
+  .metodos { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .btn-met {
+    padding: 0.38rem 0.85rem; border: 1px solid var(--borde);
+    border-radius: 5px; background: transparent; color: var(--gris);
+    font-size: 0.75rem; cursor: pointer; font-family: 'Inter', sans-serif;
+    transition: all 0.18s;
+  }
+  .btn-met.activo { background: var(--amarillo); color: #f2f68a; border-color: var(--blanco); font-weight: 600; }
+
+  /* caja info */
+  .caja-info {
+    background: #fdfdff; border: 1px solid var(--borde);
+    border-left: 3px solid var(--amarillo);
+    border-radius: 7px; padding: 0.85rem 1rem;
+    margin-bottom: 1rem; font-size: 0.82rem; line-height: 1.7; color: var(--gris);
+  }
+  .caja-info b { color: var(--texto); }
+
+  /* canvas */
+  canvas { border-radius: 9px; border: 1px solid var(--borde); max-width: 100%; display: block; }
+
+  /* stats */
+  .fila-stats { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1rem; }
+  .stat { background: var(--card); border: 1px solid var(--borde); border-radius: 7px; padding: 0.6rem 1rem; flex: 1; min-width: 120px; }
+  .stat .etiq { font-size: 0.62rem; color: var(--gris); text-transform: uppercase; letter-spacing: 0.07em; font-family: var(--mono); }
+  .stat .val { font-family: var(--mono); font-size: 1.1rem; color: var(--oro); font-weight: 600; margin-top: 0.18rem; }
+
+  /* fórmulas resumen */
+  .fila-formulas { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.8rem; }
+  .formula-card { background: var(--card); border: 1px solid var(--borde); border-radius: 8px; padding: 1rem 1.2rem; flex: 1; min-width: 185px; }
+  .formula-card .fc-et { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gris); font-family: var(--mono); margin-bottom: 0.35rem; }
+  .formula-card .fc-f { font-family: var(--mono); font-size: 0.88rem; color: var(--oro); line-height: 1.6; }
+  .formula-card .fc-n { font-size: 0.78rem; color: var(--gris); margin-top: 0.35rem; }
+
+
+
+
+
+/* Fórmulas Matemáticas */
+.formula {
+  background: var(--accent-soft);
+  padding: 15px;
+  margin: 15px 0;
+  border-left: 5px solid var(--accent);
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Sumas de Riemann e Interactividad */
+.control-riemann {
+  margin: 15px 0;
+}
+
+#riemannCanvas {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  border: 2px solid var(--accent);
+  border-radius: 15px;
+  background: white;
+  margin-top: 20px;
+}
+
+.datos {
+  margin-top: 15px;
+  display: flex;
+  gap: 30px;
+  font-size: 1.05rem;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.input-container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Tablas */
+.table-responsive {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: var(--accent);
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* Pasos Dinámicos TFC */
+.paso {
+  display: none;
+  margin-top: 10px;
+  padding: 12px;
+  background: var(--accent-soft);
+  border-radius: 10px;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Quiz UI */
+#preguntas {
+  margin-top: 20px;
+}
+
+.pregunta {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.pregunta h4 {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.opcion {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #f3f4f6;
+  color: var(--text);
+  margin-bottom: 8px;
+  padding: 10px 15px;
+}
+
+.opcion:hover:not(:disabled) {
+  background: #e5e7eb;
+  transform: none;
+}
+
+.score-container {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+#resultado {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  margin-top: 50px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Desktops y Móviles */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .card {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+  .input-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .datos {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  
+
+} 
