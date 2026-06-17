@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptos de Geometría</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body background="cantor.jpg">
+
+    <header class="header">
+         <h2 class="logo">Conjuntos de cantor</h2>
+            <nav class="nav">
+            <a href="antecedentes.html">Antecedentes</a>
+            <a href="#simulador">Simulador</a>
+            <a href="index.html">Regresar al indice</a>
+        </nav>
+    </header>
+
+
+    <main class="container content-area">
+        <article class="concept-card">
+            <h3>Tal y cómo recomendamos en las anteriores páginas recomendamos apliamente primero ver los antecedentes</h3>
+            <h2>¿Qué son los conjuntos de cantor?</h2>
+            <p>
+                Imagina que tienes una barra de chocolate larga y recta sobre la mesa. Es una barra continua, sólida y perfecta ahora vamos a jugar un juego <br>
+                Paso 1: Tomas tu cuchillo, mides la barra, y cortas exactamente el tercio de en medio. Tomas ese pedazo del medio y te lo comes. Ahora sobre la mesa te quedan dos pedacitos más pequeños (los extremos).
+                <br>
+                Paso 2: Vas a cada uno de esos dos pedacitos que sobraron, les cortas el tercio de en medio a cada uno, y te los comes. Ahora tienes cuatro pedazos aún más pequeños.
+                <br>
+                Paso 3: Repites el proceso. A cada pedacito le quitas el centro. Ahora tienes ocho pedacitos minúsculos.
+                <br>
+                Si nos mantenemos haciendo esto de manera infinita Obviamente, en la vida real, el chocolate se volvería polvo en el paso diez y no podrías cortarlo más. Pero en la mente(Que es dónde necesitamos estar
+                para temas tan abstractos)puedes hacer esto por siempre 
+            </p>
+            <h2>La gran paradoja </h2>
+            <p>Si hacemos esto por toda la eternidad, surgen dos preguntas que parecen contradecirse: <br>
+                Por un lado ¿Cuánto chocolate quedó en la mesa? La respuesta matemática es Cero. 
+                Si sumas el tamaño de todos los pedazos del medio que te fuiste comiendo, el total da exactamente la longitud de la barra original. 
+                En términos de "longitud", no quedó absolutamente nada <br>
+                Pero entonces...¿la mesa está vacía? No.Cada vez que cortabas el centro, los bordes exteriores del chocolate se quedaban en la mesa. Como hiciste infinitos cortes, 
+                dejaste infinitos bordes.
+                Lo que queda en la mesa ya no es una barra, ni son trozos. Es una infinidad de puntos aislados, 
+                microscópicos, que no miden nada de ancho, pero que están ahí. A esto se le conoce como el Polvo de Cantor. 
+                Es un objeto imposible en el mundo real: tiene cero de longitud, pero está compuesto por infinitos puntos.
+                <br>Se tratará que sea lo más visible posible con lo siguiente:
+ </p>
+            
+    <div class="simulator-section">
+<section id="simulador">
+                <div class="controls-panel">
+                    <div class="control-group">
+                        <label for="iteration-slider">Nivel de Iteración: <span id="iteration-val">0</span></label>
+                        <input type="range" id="iteration-slider" min="0" max="7" value="0">
+                    </div>
+                </div>
+
+                <div class="canvas-wrapper">
+                    <canvas id="cantor-canvas" width="800" height="400"></canvas>
+                </div>
+
+                <div id="math-stats" class="stats-panel">
+                    <h3>Análisis de la Iteración Actual</h3>
+                    <ul>
+                        <li><strong>Número de segmentos:</strong> <span id="stat-segments">1</span></li>
+                        <li><strong>Longitud de cada segmento:</strong> <span id="stat-length">1</span></li>
+                        <li><strong>Longitud total (Medida):</strong> <span id="stat-total">1</span></li>
+                        <li><strong>Es bueno destacar que la gran mayoría de simuladores de el conjunto de cantor llega solo a la iteracion 7 por potencia de cómputo</span></li>
+                    </ul>
+                </div>
+            </div>       
+            </section>
+
+
+
+
+
+
+
+           
+
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+             <p>&copy;Creative commons - Proyecto cálculo II.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
