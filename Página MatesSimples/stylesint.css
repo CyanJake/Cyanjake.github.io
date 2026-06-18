@@ -23,16 +23,15 @@ body {
 }
 
 /* Navegación */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background: #f8eeee;
-  box-shadow: var(--shadow);
+.nav a{
+    position: relative;
+    z-index: 1;
+    font-size: 15px;
+    color: rgb(80, 65, 65);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 15px;
 }
 
 nav h2{
@@ -54,6 +53,17 @@ nav a {
 
 nav a:hover{
   color: var(--accent);
+}
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #f8eeee;
+  box-shadow: var(--shadow);
 }
 
 
@@ -417,3 +427,5 @@ footer {
   
 
 } 
+
+

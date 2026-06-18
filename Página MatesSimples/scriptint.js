@@ -295,118 +295,40 @@ btnPaso.addEventListener("click", () => {
 });
 
 
+// Escuchar evento de reinicio
+btnReiniciarQuiz.addEventListener('click', renderizarQuiz);
+
+// Inicializar el cuestionario al cargar la página
+document.addEventListener('DOMContentLoaded', renderizarQuiz);
+
 // ==========================================
 // 3. VALIDACIÓN DEL EJERCICIO INTERACTIVO
 // ==========================================
-const verificar = document.getElementById("verificar");
-const respuestaInput = document.getElementById("respuesta");
-const resultadoMsg = document.getElementById("resultado");
+const botonesVerificar = document.querySelectorAll(".btn-verificar");
 
-verificar.addEventListener("click", () => {
-    let r = respuestaInput.value.toLowerCase().replace(/\s+/g, ''); // Normaliza quitando espacios
-
-    if (r.includes("x^3/3") || r.includes("x³/3") || r.includes("x3/3")) {
-        resultadoMsg.textContent = "✅ ¡Correcto! Has encontrado la familia de antiderivadas.";
-        resultadoMsg.style.color = "green";
-    } else {
-        resultadoMsg.textContent = "❌ Respuesta incorrecta. Intenta estructurar tu solución como x³/3 + C";
-        resultadoMsg.style.color = "crimson";
-    }
-});
-
-verificar.addEventListener("click", () => {
-    let r = respuestaInput.value.toLowerCase().replace(/\s+/g, ''); // Normaliza quitando espacios
-
-    if (r.includes("x^4/4") || r.includes("x⁴/4") || r.includes("x4/4")) {
-        resultadoMsg.textContent = "✅ ¡Correcto! Has encontrado la familia de antiderivadas.";
-        resultadoMsg.style.color = "green";
-    } else {
-        resultadoMsg.textContent = "❌ Respuesta incorrecta. Intenta estructurar tu solución como x⁴/4 + C";
-        resultadoMsg.style.color = "crimson";
-    }
-});
-
-verificar.addEventListener("click", () => {
-    let r = respuestaInput.value.toLowerCase().replace(/\s+/g, ''); // Normaliza quitando espacios
-
-    if (r.includes("x^7/7") || r.includes("x⁷/7") || r.includes("x7/7")) {
-        resultadoMsg.textContent = "✅ ¡Correcto! Has encontrado la familia de antiderivadas.";
-        resultadoMsg.style.color = "green";
-    } else {
-        resultadoMsg.textContent = "❌ Respuesta incorrecta. Intenta estructurar tu solución como x⁷/7 + C";
-        resultadoMsg.style.color = "crimson";
-    }
-});
-
-// ==========================================
-// 4. GENERACIÓN DINÁMICA DEL QUIZ
-// ==========================================
-const CuestionarioData = [
-    {
-        pregunta: "¿Qué representa una integral indefinida?",
-        opciones: ["Una derivada", "Una familia de antiderivadas", "Un límite de sumas"],
-        correcta: 1
-    },
-    {
-        pregunta: "¿Cuál es la integral de la función constante f(x) = x²?",
-        opciones: ["x³/3 + C", "2x + C", "x² + C"],
-        correcta: 0
-    },
-    {
-        pregunta: "¿Cuál es el propósito original de construir las Sumas de Riemann?",
-        opciones: ["Aproximar analíticamente áreas bajo curvas", "Calcular derivadas implícitas", "Resolver sistemas lineales"],
-        correcta: 0
-    },
-    {
-        pregunta: "¿Qué conexión establece el Teorema Fundamental del Cálculo?",
-        opciones: ["Matrices algebraicas y vectores", "La correspondencia inversa entre derivadas e integrales", "Series numéricas e infinitas"],
-        correcta: 1
-    }
-];
-
-let totalScore = 0;
-const preguntasDiv = document.getElementById("preguntas");
-const scoreSpan = document.getElementById("score");
-
-cuestionarioData.forEach((q, index) => {
-    let preguntaContenedor = document.createElement("div");
-    preguntaContenedor.classList.add("pregunta");
-
-    let titulo = document.createElement("h4");
-    titulo.textContent = `${index + 1}. ${q.pregunta}`;
-    preguntaContenedor.appendChild(titulo);
-
-    q.opciones.forEach((op, i) => {
-        let btnOpcion = document.createElement("button");
-        btnOpcion.textContent = op;
-        btnOpcion.classList.add("opcion");
-
-        btnOpcion.addEventListener("click", () => {
-            // Deshabilitar todos los botones de este bloque de pregunta al responder
-            if (btnOpcion.disabled) return;
-
-            if (i === q.correcta) {
-                btnOpcion.style.background = "#2D6A4F"; // Éxito verde
-                btnOpcion.style.color = "white";
-                totalScore++;
-                scoreSpan.textContent = totalScore;
-            } else {
-                btnOpcion.style.background = "#A30000"; // Fallo carmín
-                btnOpcion.style.color = "white";
-                
-                // Resaltar visualmente la correcta para ayudar al aprendizaje
-                let todosLosBotones = preguntaContenedor.querySelectorAll("button");
-                todosLosBotones[q.correcta].style.border = "3px solid #2D6A4F";
-            }
-
-            // Congelar opciones
-            let botonesParaBloquear = preguntaContenedor.querySelectorAll("button");
-            botonesParaBloquear.forEach(b => b.disabled = true);
-        });
-
-        preguntaContenedor.appendChild(btnOpcion);
+botonesVerificar.forEach(boton => {
+    boton.addEventListener("click", function() {
+        // Encontrar el input y el mensaje correspondientes a ESTE botón
+        const contenedor = this.parentElement;
+        const input = contenedor.querySelector(".respuesta-input");
+        const mensaje = contenedor.nextElementSibling; // El <p> que está justo después del div
+        
+        const respuestaUsuario = input.value.toLowerCase().replace(/\s+/g, '');
+        
+        // Obtener la respuesta correcta directamente del HTML
+        const respuestaCorrecta = this.getAttribute("data-respuesta");
+        
+        // Validar si la respuesta del usuario incluye la correcta
+        if (respuestaUsuario.includes(respuestaCorrecta) || respuestaUsuario.includes(respuestaCorrecta.replace('^', ''))) {
+            mensaje.textContent = "✅ ¡Correcto! Has encontrado la familia de antiderivadas.";
+            mensaje.style.color = "green";
+        } else {
+            mensaje.textContent = `❌ Respuesta incorrecta. Intenta estructurar tu solución como ${respuestaCorrecta} + C`;
+            mensaje.style.color = "crimson";
+        }
     });
+}); 
+}
 
-    preguntasDiv.appendChild(preguntaContenedor);
 
-     });
+

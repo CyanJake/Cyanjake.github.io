@@ -10,20 +10,16 @@ body {
 
 /* cabecera */
 
-header{
-    position: fixed;
-    display: flex;
-    top: 0;
-    left: 0;
-    padding: 5px 0px;
-    width: 100%;
-
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99;
-    
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #f8eeee;
+  box-shadow: var(--shadow);
 }
 
 

@@ -7,7 +7,6 @@
     </title>
     <link rel="stylesheet" href="stylesint.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script defer src="scriptint.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         .geogebra-wrapper {
@@ -28,7 +27,20 @@
     
 </head>
 <body>
+    <header class="header">
+        <h2 class="logo">∫ Integrales</h2>
+        <nav class="nav">
+      <a href="#integral">Integral</a>
+        <a href="#riemann">Riemann</a>
+        <a href="#conceptos">Conceptos</a>
+        <a href="#teorema">Teorema</a>
+        <a href="#metodos">Métodos</a>
+        <a href="#cuestionario">cuestionario</a>
+        <a href="index.html">Regresar al indice</a>
+        </nav>
+    </header>
 
+    <!--  
 <nav>
     <a href="index.html" style="text-decoration:none"><h2>∫ Inicio</h2></a>
     <ul>
@@ -39,6 +51,7 @@
         <li><a href="#Cuestionario">cuestionario</a></li>
     </ul>
 </nav>
+-->
 
 <header class="hero">
     <h1> Integrales </h1>
@@ -107,7 +120,7 @@
 </div>
 
 
-          <section id="conceptos" class="card-section">
+          <section id="conceptos" class="card">
         <h2 class="section-title">Conceptos importantes</h2>
         <p>Para entender mejor las sumas de Riemann, es fundamental conocer algunos conceptos para darnos cuenta de donde viene cada cosa y para que sirve. </p>
     </p>
@@ -222,21 +235,17 @@
 <H1>Suma de riemman interactiva</H1>
 <!-- simulador -->
 <div class="geogebra-wrapper">
-        <iframe scrolling="no" title="Sumas de Riemann" 
-               src="https://www.geogebra.org/material/iframe/id/kzdkrhxb/width/1366/height/549/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" 
-                width="300px" height="300px" style="border: 0px;"
-                >
-        </iframe>
+      <iframe scrolling="no" title="Rieman " src="https://www.geogebra.org/material/iframe/id/kzdkrhxb/width/1366/height/549/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/true/asb/false/sri/false/rc/true/ld/false/sdz/true/ctl/false" width="1366px" height="2000px" style="border:0px;"> </iframe>
     </div>
 
      <div class="destacado azul">
-<section class="teorema-seccion">
+<section id="teorema" class="card">
     <h2> Teorema Fundamental del Cálculo </h2>
     
     <p>
-        Este teorema establece formalmente que la derivación y la integración son operaciones inversas. 
-        Si definimos una nueva función que acumula el área bajo la curva de f desde un punto fijo 
-        $a$ hasta un punto variable x, la tasa de cambio de esa nueva función es la función original.
+      \(f:[a,b] \to \mathbb{R}\) es una función continua en \([a,b]\),
+     entonces f la integral indefinida de f  es derivable y F´(C) = f(c).
+    
     </p>
 </div>
 
@@ -281,7 +290,7 @@
  
    </section>
    
-    <section class="card">
+    <section id="metodos" class="card">
         <h2>Tabla de Integrales Básicas</h2>
         <div class="table-responsive">
             <table>
@@ -310,7 +319,7 @@
                     </tr>
                     <tr>
                         <td>cos(x)</td>
-                        <td>sin(x) + C</td>
+                        <td>sen(x) + C</td>
                     </tr>
                 </tbody>
             </table>
@@ -355,71 +364,13 @@
 
     </section>
 
-    <section class="card">
-        <h2>Ejercicio Interactivo</h2>
-        <p>Calcula la siguiente integral indefinida:</p>
-        <div class="formula">
-            
-           \[ \int x^2\,dx \]
-        </div>
-        <div class="input-container">
-            <input type="text" id="respuesta" placeholder="Escribe tu respuesta (ej: x^3/3)">
-            <button id="verificar">Verificar</button>
-        </div>
-        <p id="resultado"></p>
-
-
-
-
-
-            </section>
-
-    <section class="card">
-        <h2>Ejercicio Interactivo</h2>
-        <p>Calcula la siguiente integral indefinida:</p>
-        <div class="formula">
-            
-           \[ \int x^3\,dx \]
-        </div>
-        <div class="input-container">
-            <input type="text" id="respuesta" placeholder="Escribe tu respuesta (ej: x^4/4)">
-            <button id="verificar">Verificar</button>
-        </div>
-        <p id="resultado"></p>
-    </section>
-
-    <section class="card">
-        <h2>Ejercicio Interactivo</h2>
-        <p>Calcula la siguiente integral indefinida:</p>
-        <div class="formula">
-            
-           \[ \int x^6\,dx \]
-        </div>
-        <div class="input-container">
-            <input type="text" id="respuesta" placeholder="Escribe tu respuesta (ej: x^7/7)">
-            <button id="verificar">Verificar</button>
-        </div>
-        <p id="resultado"></p>
-    </section>
-
-
-
-
-          
-
-
-    <section id="Cuestionario" class="card">
-        <h2>Cuestionario de Integrales</h2>
-        <div id="preguntas"></div>
-        <div class="score-container">
-            <p>Puntuación actual: <span id="score">0</span> / 4</p>
-        </div>
-    </section>
+    
 </main>
 
 <footer>
      <p>&copy;Creative commons - Proyecto cálculo II.</p>
 </footer>
+<script src="scriptint.js"></script>
 
 </body>
 
